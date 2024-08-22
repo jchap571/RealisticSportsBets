@@ -53,53 +53,66 @@
     <!-- Teams row and columns -->
     <div class="container-fluid">
       <section class="row">
-        <div id="team1" class="col-6 bg-dark text-light text-center fw-bold p-5">
-          Team 1
-        </div>
+        <div class="col-6 text-center fw-bold">Team 1</div>
+        <div class="col-6 text-center fw-bold">Team 2</div>
+      </section>
 
 
-
-        <div id="team2" class="col-6 bg-dark text-light text-center fw-bold p-5">
-          Team 2
-        </div>
+      <section class="row">
+        <div id="team1" class="col-6 bg-dark text-light text-center fw-bold p-5"></div>
+        <div id="team2" class="col-6 bg-dark text-light text-center fw-bold p-5"></div>
       </section>
     </div>
+
+
+
     <!-- End of Teams row and columns -->
 
-    <!-- Bet Buttons with row and columns -->
-    <div class="container">
-      <section class="row bets justify-content-between">
 
+
+
+
+    <!-- Bet Buttons with row and columns -->
+    <div class="container-fluid">
+
+      <section class="row bets">
         <!-- Team 1 Bet Buttons -->
 
-        <div class="d-flex">
-          <div class="col-6 text-light text-center  fw-bold p-2"></div>
-          <button type="betTeam1 bet-button" class="btn btn-primary btn-sm">Bet $5</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet $25</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet $100</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet it All</button>
+        <div class="d-flex justify-content-between">
+          <div class="col-md-6 text-light fw-bold p-2">
+            <button onclick="" type="bet-button" class="col-3 btn btn-primary btn-sm">Bet $5</button>
+            <button type="bet-button" class="col-3 btn btn-primary btn-sm">Bet $25</button>
+            <button type="bet-button" class="col-3 btn btn-primary btn-sm">Bet $100</button>
+            <div class="d-flex justify-content-center py-1">
+              <button type="bet-button" class="col-3 btn btn-primary btn-sm">Bet it All</button>
+            </div>
+          </div>
 
 
 
 
 
           <!-- Team 2 Bet buttons -->
-          <div class="col-6 text-light text-center fw-bold p-2"></div>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet $5</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet $25</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet $100</button>
-          <button type="bet-button" class="btn btn-primary btn-sm">Bet it All</button>
+
+          <div class="col-md-6 text-light fw-bold p-2">
+            <button onclick="betTeam2(5)" type="bet-button" class="col-3 btn btn-primary btn-sm">Bet $5</button>
+            <button type="bet-button" class="col-3 btn btn-primary btn-sm ">Bet $25</button>
+            <button type="bet-button" class="col-3 btn btn-primary btn-sm">Bet $100</button>
+            <div class="d-flex justify-content-center py-1">
+              <button type="bet-button" class="col-3 btn btn-primary btn-sm">Bet it All</button>
+            </div>
+          </div>
         </div>
+    </div>
+
+    </section>
 
 
-
-      </section>
 
 
     </div>
 
     <!-- End of Bet Buttons row and columns -->
-
 
 
 

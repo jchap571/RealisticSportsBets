@@ -23,6 +23,7 @@ const players = [
   { teamNumber: 2, emoji: '🐅', skill: 100, name: "Tiger" },
 ]
 
+
 function drawTeam1() {
   let team1Elem = document.getElementById('team1')
   let team1Content = ''
@@ -58,7 +59,7 @@ drawTeam1()
 drawTeam2()
 
 
-function betTeam1() {
+function betTeam1(betMoney) {
   let team1Arr = players.filter(player => player.teamNumber == '1')
   let team2Arr = players.filter(player => player.teamNumber == '2')
   console.log(team1Arr)
@@ -70,9 +71,19 @@ function betTeam1() {
     team1TotalSkill += player.skill
     console.log('+', player.skill, team1TotalSkill)
   }
+  for (let i = 0; i < team2Arr.length; i++) {
+    let player = team2Arr[i]
+    team2TotalSkill += player.skill
+    console.log('+', player.skill, team2TotalSkill)
+  }
+  console.log(`team 1 total skill =`, team1TotalSkill)
+
 }
 
-function betTeam2() {
+
+
+function betTeam2(betMoney) {
+  let bank = document.getElementById('bank')
   let team1Arr = players.filter(player => player.teamNumber == '1')
   let team2Arr = players.filter(player => player.teamNumber == '2')
   console.log(team1Arr)
@@ -82,10 +93,28 @@ function betTeam2() {
   for (let i = 0; i < team2Arr.length; i++) {
     let player = team2Arr[i];
     team2TotalSkill += player.skill
-    console.log('+', player.skill, team2TotalSkill)
+  }
+  console.log(`team 2 total skill =`, team2TotalSkill)
+  for (let i = 0; i < team1Arr.length; i++) {
+    let player = team1Arr[i]
+    team1TotalSkill += player.skill
+  }
+  console.log(`team 1 total skill =`, team1TotalSkill)
+  let higherSkill = compareSkill(team2TotalSkill, team1TotalSkill)
+  if (higherSkill) {
+    // figure out how to turn a string into an integer value, then set innerText into the new integer value
+    let bankValue = parseInt(bank.innerText) + betMoney
+    bank.innerText = bankValue.toString()
   }
 }
 
-
-
+function compareSkill(bettingTeamSkill, againstTeamSkill) {
+  if (bettingTeamSkill > againstTeamSkill) {
+    console.log(`the betting team's skill is greater than against team's skill`)
+    return true
+  } else {
+    console.log(`the betting team's skill isn't greater than against team's skill`)
+    return false
+  }
+}
 
